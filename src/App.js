@@ -4,13 +4,16 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Errorpage from "./components/Errorpage";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Upload from "./components/Upload";
+import Listing from "./components/Listing";
+import Display from "./components/Display";
 
 const AppLayout = () => {
 	return (
-		<div className="border-2 border-red-900 w-full">
+		<div className="w-full h-full">
 			<Header />
 			<Outlet />
-      <Footer />
+      		<Footer />
 		</div>
 	);
 };
@@ -25,6 +28,18 @@ const appRouter = createBrowserRouter([
 				path: "/",
 				element: <Body />,
 			},
+			{
+				path: "/upload",
+				element: <Upload/>,
+			},
+			{
+				path: "/listing",
+				element: <Listing/>,
+			},
+			{
+				path: "/display",
+				element: <Display/>
+			}
 		],
 	},
 ]);
